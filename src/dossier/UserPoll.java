@@ -136,10 +136,7 @@ public class UserPoll extends javax.swing.JFrame {
     private void nextQues() {
 
         if (currentQuestion > quez.size() - 1) {
-            JOptionPane.showMessageDialog(this, "Poll Over", "INFO", JOptionPane.INFORMATION_MESSAGE);
-            AdminUser x = new AdminUser();
-            x.setVisible(true);
-            this.setVisible(false);
+            //Osmani is a faggot
         } else {
             Question x = quez.get(currentQuestion);
             String que = x.getQuestion();
