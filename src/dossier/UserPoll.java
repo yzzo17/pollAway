@@ -32,7 +32,7 @@ public class UserPoll extends javax.swing.JFrame {
 
     public UserPoll() {
         initComponents();
-
+        this.setLocationRelativeTo(null);
         getQues();
         nextQues();
         quesPanel.revalidate();
@@ -128,10 +128,15 @@ public class UserPoll extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         nextQues();
     }//GEN-LAST:event_jButton1ActionPerformed
+    
+    
     private void nextQues() {
 
         if (currentQuestion > quez.size() - 1) {
-            //Osmani is a faggot
+            JOptionPane.showMessageDialog(this, "ALERT","POll OVER",JOptionPane.INFORMATION_MESSAGE);
+            AdminUser n = new AdminUser();
+            this.setVisible(false);
+            n.setVisible(true);
         } else {
             Question x = quez.get(currentQuestion);
             String que = x.getQuestion();

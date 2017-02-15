@@ -30,6 +30,7 @@ public class AdminUser extends javax.swing.JFrame {
     File ques = new File(pathQues);
     public AdminUser() {
         initComponents();
+        this.setLocationRelativeTo(null);
         demo.mkdirs();
         ques.mkdirs();
     }

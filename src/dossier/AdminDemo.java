@@ -26,6 +26,7 @@ public class AdminDemo extends javax.swing.JFrame {
     
     public AdminDemo() {
         initComponents();
+        this.setLocationRelativeTo(null);
         this.revalidate();
         readDemoFile();
         displayBox();
@@ -44,7 +45,7 @@ public class AdminDemo extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         dName = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        currentDem = new javax.swing.JLabel();
         DemoPanel = new javax.swing.JPanel();
         DeleteButton = new javax.swing.JButton();
         addButton = new javax.swing.JButton();
@@ -100,7 +101,7 @@ public class AdminDemo extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Current Demographics:");
+        currentDem.setText("Current Demographics:");
 
         DemoPanel.setMaximumSize(new java.awt.Dimension(364, 215));
         DemoPanel.setMinimumSize(new java.awt.Dimension(364, 215));
@@ -155,7 +156,7 @@ public class AdminDemo extends javax.swing.JFrame {
                         .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(184, 184, 184)
                         .addComponent(contButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel1)
+                    .addComponent(currentDem)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(DemoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -168,7 +169,7 @@ public class AdminDemo extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(currentDem)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -345,9 +346,9 @@ public class AdminDemo extends javax.swing.JFrame {
     private javax.swing.JButton addButton;
     private javax.swing.JButton backButton;
     private javax.swing.JButton contButton;
+    private javax.swing.JLabel currentDem;
     private javax.swing.JTextField dName;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 

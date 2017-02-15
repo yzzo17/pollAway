@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package dossier;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import java.awt.Window;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -25,6 +28,7 @@ public class AdminAddPoll extends javax.swing.JFrame {
     ArrayList<String> Ques = new ArrayList();
     public AdminAddPoll() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -240,9 +244,6 @@ public class AdminAddPoll extends javax.swing.JFrame {
         ans4.setText("");
         ans5.setText("");
         
-        
-        
-        
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void ans1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ans1ActionPerformed
@@ -262,6 +263,9 @@ public class AdminAddPoll extends javax.swing.JFrame {
         this.setVisible(false);
         AdminUser admin = new AdminUser();
         admin.setVisible(true);
+        
+        admin.setLocationRelativeTo(admin);
+       
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void ans2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ans2ActionPerformed
@@ -279,6 +283,7 @@ public class AdminAddPoll extends javax.swing.JFrame {
     private void ans5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ans5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ans5ActionPerformed
+ 
     private void writePollToFile(ArrayList<String> ansArray) throws FileNotFoundException, IOException{
         String username = System.getProperty("user.name");
         String path = "C:/Users/"+username+"/Documents/PollAway/polls";
