@@ -6,12 +6,13 @@
 package dossier;
 
 import java.util.ArrayList;
+import java.io.*;
 
 /**
  *
  * @author yzzo
  */
-public class Question {
+public class Question implements Serializable{
     private String question;
     private ArrayList<String> answers = new ArrayList();
     

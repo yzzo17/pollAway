@@ -6,12 +6,12 @@
 package dossier;
 
 import java.util.ArrayList;
-
+import java.io.*;
 /**
  *
  * @author yzzo
  */
-public class DemoNode extends Node{
+public class DemoNode extends Node implements Serializable{
     public ArrayList<Edge> connections;
     
     public DemoNode(String n){

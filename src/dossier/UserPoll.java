@@ -7,8 +7,10 @@ package dossier;
 
 import java.io.File;
 import java.util.*;
+import javax.swing.AbstractButton;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
+import javax.swing.ButtonModel;
 import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 
@@ -22,17 +24,24 @@ public class UserPoll extends javax.swing.JFrame {
      * Creates new form UserPoll
      */
     ArrayList<Question> quez = new ArrayList();
-
+    ButtonGroup group = new ButtonGroup();
     int currentQuestion = 0;
 
     String username = System.getProperty("user.name");
     String path = "C:/Users/" + username + "/Documents/PollAway/polls/poll.txt";
+    String vpath = "C:/Users/"+username+"/Documents/PollAway/votes/";
     File file = new File(path);
-    PersonNode p = new PersonNode(123);
+    
+    PollAwayMain pam = new PollAwayMain();
+    Voter v = new Voter(123);
+    
+    
+    
 
     public UserPoll() {
         initComponents();
         this.setLocationRelativeTo(null);
+        
         getQues();
         nextQues();
         quesPanel.revalidate();
@@ -126,7 +135,15 @@ public class UserPoll extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String ans = getSelected(group);
+        PollAnswerNode a = new PollAnswerNode(ans);
+        Edge e = new Edge(v, a);
+        
+        Voter.connections.add(e);
+        
         nextQues();
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
     
     
@@ -134,6 +151,12 @@ public class UserPoll extends javax.swing.JFrame {
 
         if (currentQuestion > quez.size() - 1) {
             JOptionPane.showMessageDialog(this, "ALERT","POll OVER",JOptionPane.INFORMATION_MESSAGE);
+            
+            MasterVoters.Voters.add(v);
+            pam.Serialize(MasterVoters.Voters, vpath);
+            Voter.connections.clear();
+            
+            
             AdminUser n = new AdminUser();
             this.setVisible(false);
             n.setVisible(true);
@@ -144,7 +167,7 @@ public class UserPoll extends javax.swing.JFrame {
             qNum.setText(String.valueOf(currentQuestion + 1));
 
             ArrayList<String> tempA = x.getAnswers();
-            ButtonGroup group = new ButtonGroup();
+            
             answerPanel.removeAll();
             for (int i = 0; i < tempA.size(); i++) {
                 JRadioButton b = new JRadioButton();
@@ -153,6 +176,7 @@ public class UserPoll extends javax.swing.JFrame {
                 answerPanel.add(b);
                 answerPanel.setLayout(new BoxLayout(answerPanel, BoxLayout.Y_AXIS));
             }
+            
             quesPanel.revalidate();
             answerPanel.revalidate();
 
@@ -160,7 +184,7 @@ public class UserPoll extends javax.swing.JFrame {
         }
 
     }
-
+    
     private void getQues() {
         try {
             Scanner in = new Scanner(file);
@@ -184,6 +208,17 @@ public class UserPoll extends javax.swing.JFrame {
         }
     }
 
+   private  String getSelected(ButtonGroup buttonGroup) {
+        for (Enumeration<AbstractButton> buttons = buttonGroup.getElements(); buttons.hasMoreElements();) {
+            AbstractButton button = buttons.nextElement();
+
+            if (button.isSelected()) {
+                return button.getText();
+            }
+        }
+
+        return null;
+    }
     /**
      * @param args the command line arguments
      */

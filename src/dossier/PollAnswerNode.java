@@ -6,12 +6,12 @@
 package dossier;
 
 import java.util.ArrayList;
-
+import java.io.*;
 /**
  *
  * @author yzzo
  */
-public class PollAnswerNode extends Node{
+public class PollAnswerNode extends Node implements Serializable{
     public ArrayList<Edge> connections;
     
     public PollAnswerNode(String n){

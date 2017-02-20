@@ -4,15 +4,14 @@
  * and open the template in the editor.
  */
 package dossier;
-import java.io.*;
+
 /**
  *
- * @author yzzo
+ * @author Osmani Alegre
  */
-public class Node implements Serializable{
-    public String name;
-    public Node(String s){
-        name = s;
+public class Voter extends PersonNode{
+    
+    public Voter(int id){
+        super(id);
     }
-
 }

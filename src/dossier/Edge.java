@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 package dossier;
-
+import java.io.*;
 /**
  *
  * @author yzzo
  */
-public class Edge {
+public class Edge implements Serializable{
     public Node start;
     public Node end;
     

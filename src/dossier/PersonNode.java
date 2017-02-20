@@ -6,17 +6,21 @@
 package dossier;
 
 import java.util.ArrayList;
-
+import java.io.*;
 /**
  *
  * @author yzzo
  */
-public class PersonNode extends Node{
-    public ArrayList<Edge> connections;
+public class PersonNode extends Node implements Serializable{
+    public static ArrayList<Edge> connections;
     
     
     public PersonNode(int id){
         super(Integer.toString(id)); 
         connections = new ArrayList();
+    }
+    
+    public ArrayList<Edge> getConnections(){
+        return connections;
     }
 }

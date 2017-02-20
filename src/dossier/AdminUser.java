@@ -7,7 +7,7 @@ package dossier;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
+import java.io.*;
 import java.util.*;
 import javax.swing.BoxLayout;
 import javax.swing.JCheckBox;
@@ -22,12 +22,17 @@ public class AdminUser extends javax.swing.JFrame {
     /**
      * Creates new form AdminUser
      */
+    Random r = new Random();
+    
+    
     ArrayList <JCheckBox> bArray = new ArrayList();
     String username = System.getProperty("user.name");
     String pathDemo = "C:/Users/"+username+"/Documents/PollAway/demo/";
     String pathQues = "C:/Users/"+username+"/Documents/PollAway/polls/";
     File demo = new File(pathDemo);
     File ques = new File(pathQues);
+    
+    
     public AdminUser() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -47,6 +52,7 @@ public class AdminUser extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        Results_Button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,6 +75,13 @@ public class AdminUser extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
         jLabel1.setText("PollAway");
 
+        Results_Button.setText("Results");
+        Results_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Results_ButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -80,6 +93,7 @@ public class AdminUser extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Results_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36))
@@ -93,7 +107,9 @@ public class AdminUser extends javax.swing.JFrame {
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Results_Button, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -106,10 +122,15 @@ public class AdminUser extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        UserDemo n = new UserDemo();
+        
+        UserDemo x = new UserDemo();
         this.setVisible(false);
-        n.setVisible(true);
+        x.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void Results_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Results_ButtonActionPerformed
+        
+    }//GEN-LAST:event_Results_ButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -147,6 +168,7 @@ public class AdminUser extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Results_Button;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;

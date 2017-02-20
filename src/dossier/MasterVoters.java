@@ -4,15 +4,15 @@
  * and open the template in the editor.
  */
 package dossier;
-import java.io.*;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+
 /**
  *
- * @author yzzo
+ * @author Osmani Alegre
  */
-public class Node implements Serializable{
-    public String name;
-    public Node(String s){
-        name = s;
-    }
-
+public class MasterVoters implements Serializable{
+    public static ArrayList<Voter> Voters = new ArrayList();
+    
 }
