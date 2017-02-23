@@ -73,27 +73,26 @@ public class AdminDemo extends javax.swing.JFrame {
         DemoNameLayout.setHorizontalGroup(
             DemoNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DemoNameLayout.createSequentialGroup()
-                .addGroup(DemoNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(DemoNameLayout.createSequentialGroup()
-                        .addGap(81, 81, 81)
-                        .addComponent(dName, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(DemoNameLayout.createSequentialGroup()
-                        .addGap(164, 164, 164)
-                        .addComponent(jButton1)))
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addGap(164, 164, 164)
+                .addComponent(jButton1)
+                .addContainerGap(190, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DemoNameLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(118, 118, 118))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DemoNameLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(dName, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(83, 83, 83))
         );
         DemoNameLayout.setVerticalGroup(
             DemoNameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DemoNameLayout.createSequentialGroup()
                 .addGap(69, 69, 69)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
+                .addGap(29, 29, 29)
                 .addComponent(dName, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
+                .addGap(35, 35, 35)
                 .addComponent(jButton1)
                 .addContainerGap(47, Short.MAX_VALUE))
         );
@@ -177,7 +176,7 @@ public class AdminDemo extends javax.swing.JFrame {
                         .addComponent(addButton)
                         .addGap(155, 155, 155))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(DemoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(DemoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -226,6 +225,7 @@ public class AdminDemo extends javax.swing.JFrame {
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
         Dimension n = new Dimension(400, 300);
         DemoName.setSize(n);
+        DemoName.setLocationRelativeTo(null);
         DemoName.setVisible(true);
         
     }//GEN-LAST:event_addButtonActionPerformed
@@ -239,6 +239,7 @@ public class AdminDemo extends javax.swing.JFrame {
         e.setText(dName.getText());
         bArray.add(e);
         DemoName.setVisible(false);
+        dName.setText("");
         try {
             writeDemoFile();
         } catch (FileNotFoundException ex) {
