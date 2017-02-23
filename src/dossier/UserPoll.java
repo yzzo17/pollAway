@@ -28,12 +28,10 @@ public class UserPoll extends javax.swing.JFrame {
     int currentQuestion = 0;
 
     String username = System.getProperty("user.name");
-    String path = "C:/Users/" + username + "/Documents/PollAway/polls/poll.txt";
-    String vpath = "C:/Users/"+username+"/Documents/PollAway/votes/";
+    String path = "../pollAway/files/polls/poll.txt";
     File file = new File(path);
     
     PollAwayMain pam = new PollAwayMain();
-    Voter v = new Voter(123);
     
     
     
@@ -135,11 +133,7 @@ public class UserPoll extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String ans = getSelected(group);
-        PollAnswerNode a = new PollAnswerNode(ans);
-        Edge e = new Edge(v, a);
         
-        Voter.connections.add(e);
         
         nextQues();
         
@@ -152,9 +146,7 @@ public class UserPoll extends javax.swing.JFrame {
         if (currentQuestion > quez.size() - 1) {
             JOptionPane.showMessageDialog(this, "ALERT","POll OVER",JOptionPane.INFORMATION_MESSAGE);
             
-            MasterVoters.Voters.add(v);
-            pam.Serialize(MasterVoters.Voters, vpath);
-            Voter.connections.clear();
+           
             
             
             AdminUser n = new AdminUser();

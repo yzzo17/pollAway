@@ -20,8 +20,7 @@ public class AdminDemo extends javax.swing.JFrame {
     /** Creates new form Demo */
     ArrayList<JCheckBox> bArray = new ArrayList();
     
-    String username = System.getProperty("user.name");
-    String path = "C:/Users/"+username+"/Documents/PollAway/demo/demo.txt";
+    String path = "../pollAway/files/demo/demo.txt";
     File file = new File(path);
     
     public AdminDemo() {

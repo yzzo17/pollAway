@@ -1,0 +1,12 @@
+question 1	
+4
+a0 ans 1
+a1 ans 1
+a2 ans 1
+a3 ans 1
+ques 2
+4
+a0 ans 2
+a1 ans 2
+a2 ans 2
+a3 ans 2

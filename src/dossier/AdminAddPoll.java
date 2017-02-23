@@ -286,7 +286,7 @@ public class AdminAddPoll extends javax.swing.JFrame {
  
     private void writePollToFile(ArrayList<String> ansArray) throws FileNotFoundException, IOException{
         String username = System.getProperty("user.name");
-        String path = "C:/Users/"+username+"/Documents/PollAway/polls";
+        String path = "../pollAway/files/polls";
         
         BufferedWriter out = new BufferedWriter(new FileWriter(path+"/poll.txt"));
         for (int i = 0; i < ansArray.size(); i++) {

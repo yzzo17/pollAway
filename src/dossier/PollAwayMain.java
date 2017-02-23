@@ -21,49 +21,9 @@ public class PollAwayMain implements Serializable{
     
     public static void main(String[] args){
         
-        ArrayList<PersonNode> DeVoters = null;
-        
-        Random n = new Random();
-        PollAnswerNode pA = new PollAnswerNode("hillary");
-        PollAnswerNode pB = new PollAnswerNode("trump");
-        
-        DemoNode dA = new DemoNode("hispanic");
-        DemoNode dB = new DemoNode("black");
-        
-        
-        
-        
-        PersonNode a = new PersonNode(n.nextInt(1000) + 100);
-        PersonNode b = new PersonNode(n.nextInt(1000) + 100);
-        
-        Edge e1 = new Edge(a, pA);
-        Edge e2 = new Edge(a, dA);
-        
-        Edge e3 = new Edge(b, pB);
-        Edge e4 = new Edge(b, dB);
-        
-        a.connections.add(e1);
-        a.connections.add(e2);
-        
-        b.connections.add(e3);
-        b.connections.add(e4);
-        
-        
-        String username = System.getProperty("user.name");
-        String path = "C:/Users/"+username+"/Documents/PollAway/votes/";
-        
-        File f = new File(path);
-        f.mkdirs();
-        
-        /*                                               --in
-        
-        */
-        
-        /*                                               --out
-        
-        */
+       
     }
-    
+    /*
     public void Serialize(ArrayList<Voter> v, String path){
         try {
            FileOutputStream fileOut = new FileOutputStream(path+ "voters.ser");
@@ -77,7 +37,6 @@ public class PollAwayMain implements Serializable{
     }
     
     public ArrayList<Voter> deSerialize(String path){
-        ArrayList<Voter> v = null;
         File f = new File(path);
         if (f.length() < 1) {
             return null;
@@ -103,6 +62,6 @@ public class PollAwayMain implements Serializable{
         }   
     }
     
-    
+    */
     
 }
