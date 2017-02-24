@@ -5,13 +5,15 @@
  */
 package dossier;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author javif89
  */
 public class Answer {
     private String answerText;
-    private User user;
+    private ArrayList<Demographic> demos;
     /*
     TODO: get and set
     */
