@@ -1,12 +1,18 @@
 question 1	
 4
-a0 ans 1
-a1 ans 1
-a2 ans 1
-a3 ans 1
-ques 2
+a0 this is an answer for question 1
+a1 this is an answer for question 1
+a2 this is an answer for question 1
+a3 this is an answer for question 1
+question 2
 4
-a0 ans 2
-a1 ans 2
-a2 ans 2
-a3 ans 2
+a0 this is an answer for question 2
+a1 this is an answer for question 2
+a2 this is an answer for question 2
+a3 this is an answer for question 2
+question 3
+4
+a0 this is an answer for qustion 3
+a1 this is an answer for qustion 3
+a2 this is an answer for qustion 3
+a3 this is an answer for qustion 3

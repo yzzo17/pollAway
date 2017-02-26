@@ -25,16 +25,19 @@ public class UserDemo extends javax.swing.JFrame {
      */
     ArrayList<JCheckBox> bArray = new ArrayList();
     ArrayList<String> selected = new ArrayList();
+    boolean nextbutton = false;
+    User user;
     
     String username = System.getProperty("user.name");
     String path = "../pollAway/files/demo/demo.txt";
     File file = new File(path);
     
-    public UserDemo() {
+    public UserDemo(User user) {
         initComponents();
         this.setLocationRelativeTo(null);
         readDemoFile();
         displayBox();
+        this.user = user;
     }
 
     /**
@@ -103,11 +106,9 @@ public class UserDemo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        addSelected();
+        nextbutton = true;
         
-        
-        UserPoll x = new UserPoll();
-        this.setVisible(false);
-        x.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -138,6 +139,7 @@ public class UserDemo extends javax.swing.JFrame {
                 selected.add(bArray.get(i).getText());
             }
         }
+        user.demographics = selected;
     }
     
     
@@ -183,7 +185,7 @@ public class UserDemo extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new UserDemo().setVisible(true);
+                
             }
         });
     }

@@ -121,10 +121,8 @@ public class AdminUser extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
-        UserDemo x = new UserDemo();
-        this.setVisible(false);
-        x.setVisible(true);
+
+        Poll p = new Poll();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void Results_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Results_ButtonActionPerformed

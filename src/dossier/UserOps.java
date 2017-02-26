@@ -17,4 +17,5 @@ public class UserOps {
     getDemographics() populates currentUser.demographics;
     getAnswers() iterates through currentPoll.results and add each answer to each arraylist of answers
     */
+    
 }

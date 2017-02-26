@@ -13,8 +13,37 @@ import java.util.ArrayList;
  */
 public class Answer {
     private String answerText;
-    private ArrayList<Demographic> demos;
+    ArrayList<User> users = new ArrayList();
+    
+    public void setAnswerText(String s){
+        answerText = s;
+    }
+    public String getAnswerText(){
+        return answerText;   
+    }
+    
+    public void addUser(User u){
+        users.add(u);
+    }
+    
+}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     /*
     TODO: get and set
     */
-}
+    

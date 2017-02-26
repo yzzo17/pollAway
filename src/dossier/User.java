@@ -12,8 +12,17 @@ import java.util.ArrayList;
  * @author javif89
  */
 public class User {
-    ArrayList<Demographic> demographics;
+    ArrayList<String> demographics;
     String id; //????
+    
+    public void addDemo(String d){
+        demographics.add(d);
+    }
+    
+    
+    
+    
+    
     /*
     TODO:
     Add get and set methods for demographics

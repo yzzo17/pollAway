@@ -24,9 +24,13 @@ public class UserPoll extends javax.swing.JFrame {
      * Creates new form UserPoll
      */
     ArrayList<Question> quez = new ArrayList();
+    ArrayList<String> ansz = new ArrayList();
+    boolean fin = false;
+    
     ButtonGroup group = new ButtonGroup();
     int currentQuestion = 0;
-
+    
+    
     String username = System.getProperty("user.name");
     String path = "../pollAway/files/polls/poll.txt";
     File file = new File(path);
@@ -59,7 +63,7 @@ public class UserPoll extends javax.swing.JFrame {
         qNum = new javax.swing.JLabel();
         questionUser = new javax.swing.JLabel();
         answerPanel = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        nextQ_button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -100,10 +104,10 @@ public class UserPoll extends javax.swing.JFrame {
                 .addGap(20, 20, 20))
         );
 
-        jButton1.setText("Next Q");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        nextQ_button.setText("Next Q");
+        nextQ_button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                nextQ_buttonActionPerformed(evt);
             }
         });
 
@@ -116,7 +120,7 @@ public class UserPoll extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton1))
+                        .addComponent(nextQ_button))
                     .addComponent(quesPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -126,19 +130,19 @@ public class UserPoll extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(quesPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1))
+                .addComponent(nextQ_button))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
-        
+    private void nextQ_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextQ_buttonActionPerformed
+        String selectedAns = getSelected(group);
+        ansz.add(selectedAns);
         nextQues();
         
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_nextQ_buttonActionPerformed
     
     
     private void nextQues() {
@@ -146,12 +150,8 @@ public class UserPoll extends javax.swing.JFrame {
         if (currentQuestion > quez.size() - 1) {
             JOptionPane.showMessageDialog(this, "ALERT","POll OVER",JOptionPane.INFORMATION_MESSAGE);
             
-           
+            fin = true;
             
-            
-            AdminUser n = new AdminUser();
-            this.setVisible(false);
-            n.setVisible(true);
         } else {
             Question x = quez.get(currentQuestion);
             String que = x.getQuestion();
@@ -248,7 +248,7 @@ public class UserPoll extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel answerPanel;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton nextQ_button;
     private javax.swing.JLabel qNum;
     private javax.swing.JPanel quesPanel;
     private javax.swing.JLabel questionUser;

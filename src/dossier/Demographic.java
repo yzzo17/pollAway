@@ -10,8 +10,9 @@ package dossier;
  * @author javif89
  */
 public class Demographic {
-    private String demoName;
-    private String demoAnswer;
+    public String demoName;
+    
+    
     /*
     TODO: Get and set
     */
