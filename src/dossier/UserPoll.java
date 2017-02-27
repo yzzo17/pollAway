@@ -37,13 +37,17 @@ public class UserPoll extends javax.swing.JFrame {
     
     PollAwayMain pam = new PollAwayMain();
     
+    /*
+    YOU GOT ALL THE DATA YOU NEED RIGHT HERE. YOU GOT THE USER AND YOU'RE ABOUT TO THE THE ANSWERS. FIGURE OUT HOW TO SAVE THIS BITCH ASS SHIT AND YOU'RE GOOD
+    */
     
+    User user;
     
 
-    public UserPoll() {
+    public UserPoll(User u) {
         initComponents();
         this.setLocationRelativeTo(null);
-        
+        this.user = u;
         getQues();
         nextQues();
         quesPanel.revalidate();
@@ -241,7 +245,6 @@ public class UserPoll extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new UserPoll().setVisible(true);
             }
         });
     }

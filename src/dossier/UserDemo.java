@@ -32,7 +32,7 @@ public class UserDemo extends javax.swing.JFrame {
     String path = "../pollAway/files/demo/demo.txt";
     File file = new File(path);
     
-    public UserDemo(User user) {
+    public UserDemo() {
         initComponents();
         this.setLocationRelativeTo(null);
         readDemoFile();
@@ -139,7 +139,12 @@ public class UserDemo extends javax.swing.JFrame {
                 selected.add(bArray.get(i).getText());
             }
         }
+        /*
+        LOOK AT THIS OTHER SHIT OVER HERE. NOW YOU START THE OTHER BITCH UP AND PASS THE USER SO YOU CAN SAVE IT ALL TOGETHER LATER
+        */
         user.demographics = selected;
+        UserPoll up = new UserPoll(user);
+        up.setVisible(true);
     }
     
     

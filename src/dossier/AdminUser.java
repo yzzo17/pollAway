@@ -121,8 +121,12 @@ public class AdminUser extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
-        Poll p = new Poll();
+        /*
+        
+        LOOOOOOK AT THIS SHIT RIGHT HERE. YOU NO LONGER NEED TO PASS AN ARGUMENT TO THIS BITCH CUZ IT CREATES IT ON IT'S OWN
+        
+        */
+        UserDemo ud = new UserDemo();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void Results_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Results_ButtonActionPerformed
