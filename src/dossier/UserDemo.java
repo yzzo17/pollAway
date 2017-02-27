@@ -26,7 +26,7 @@ public class UserDemo extends javax.swing.JFrame {
     ArrayList<JCheckBox> bArray = new ArrayList();
     ArrayList<String> selected = new ArrayList();
     boolean nextbutton = false;
-    User user;
+    User user = new User();
     
     String username = System.getProperty("user.name");
     String path = "../pollAway/files/demo/demo.txt";
@@ -51,7 +51,7 @@ public class UserDemo extends javax.swing.JFrame {
 
         DemoPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        next_Button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -74,10 +74,10 @@ public class UserDemo extends javax.swing.JFrame {
                 .addContainerGap(175, Short.MAX_VALUE))
         );
 
-        jButton1.setText("Next");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        next_Button.setText("Next");
+        next_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                next_ButtonActionPerformed(evt);
             }
         });
 
@@ -89,7 +89,7 @@ public class UserDemo extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(DemoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(next_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -98,18 +98,17 @@ public class UserDemo extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(DemoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(next_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void next_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_next_ButtonActionPerformed
         addSelected();
-        nextbutton = true;
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_next_ButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -197,7 +196,7 @@ public class UserDemo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel DemoPanel;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton next_Button;
     // End of variables declaration//GEN-END:variables
 }

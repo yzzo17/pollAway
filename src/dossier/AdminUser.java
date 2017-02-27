@@ -30,13 +30,14 @@ public class AdminUser extends javax.swing.JFrame {
     String pathQues = "../pollAway/files/polls/";
     File demo = new File(pathDemo);
     File ques = new File(pathQues);
-    
+    public static ArrayList<ArrayList<Answer>> results = new ArrayList();
     
     public AdminUser() {
         initComponents();
         this.setLocationRelativeTo(null);
         demo.mkdirs();
         ques.mkdirs();
+        
     }
 
     /**
@@ -74,6 +75,7 @@ public class AdminUser extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
         jLabel1.setText("PollAway");
 
+        Results_Button.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         Results_Button.setText("Results");
         Results_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,10 +94,10 @@ public class AdminUser extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(Results_Button, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
+                    .addComponent(Results_Button, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(36, 36, 36))
+                .addGap(51, 51, 51))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -121,12 +123,10 @@ public class AdminUser extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        /*
         
-        LOOOOOOK AT THIS SHIT RIGHT HERE. YOU NO LONGER NEED TO PASS AN ARGUMENT TO THIS BITCH CUZ IT CREATES IT ON IT'S OWN
-        
-        */
         UserDemo ud = new UserDemo();
+        ud.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void Results_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Results_ButtonActionPerformed

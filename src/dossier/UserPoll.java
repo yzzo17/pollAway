@@ -37,10 +37,6 @@ public class UserPoll extends javax.swing.JFrame {
     
     PollAwayMain pam = new PollAwayMain();
     
-    /*
-    YOU GOT ALL THE DATA YOU NEED RIGHT HERE. YOU GOT THE USER AND YOU'RE ABOUT TO THE THE ANSWERS. FIGURE OUT HOW TO SAVE THIS BITCH ASS SHIT AND YOU'RE GOOD
-    */
-    
     User user;
     
 
@@ -142,7 +138,13 @@ public class UserPoll extends javax.swing.JFrame {
 
     private void nextQ_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextQ_buttonActionPerformed
         String selectedAns = getSelected(group);
-        ansz.add(selectedAns);
+        if (!(currentQuestion > quez.size()-1)) {
+            for (int i = 0; i < AdminUser.results.get(currentQuestion).size(); i++) {
+                if (AdminUser.results.get(currentQuestion).get(i).getAnswerText().equals(selectedAns)) {
+                    AdminUser.results.get(currentQuestion).get(i).users.add(user);
+                }
+            }
+        }
         nextQues();
         
         
@@ -153,8 +155,9 @@ public class UserPoll extends javax.swing.JFrame {
 
         if (currentQuestion > quez.size() - 1) {
             JOptionPane.showMessageDialog(this, "ALERT","POll OVER",JOptionPane.INFORMATION_MESSAGE);
-            
-            fin = true;
+            AdminUser u = new AdminUser();
+            this.setVisible(false);
+            u.setVisible(true);
             
         } else {
             Question x = quez.get(currentQuestion);
@@ -198,7 +201,20 @@ public class UserPoll extends javax.swing.JFrame {
                 q.setAnswers(ans);
                 quez.add(q);
             }
-
+            
+            for (int i = 0; i < quez.size(); i++) {
+                ArrayList<String> S = quez.get(i).getAnswers();
+                ArrayList<Answer> aA = new ArrayList();
+                for (int j = 0; j < S.size(); j++) {
+                    Answer a = new Answer();
+                    a.setAnswerText(S.get(j));
+                    aA.add(a);
+                    
+                }
+                AdminUser.results.add(aA);
+            }
+            
+            
         } catch (Exception ex) {
             ex.printStackTrace();
         }
