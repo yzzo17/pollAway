@@ -1,18 +1,13 @@
-question 1	
-4
-a0 this is an answer for question 1
-a1 this is an answer for question 1
-a2 this is an answer for question 1
-a3 this is an answer for question 1
-question 2
-4
-a0 this is an answer for question 2
-a1 this is an answer for question 2
-a2 this is an answer for question 2
-a3 this is an answer for question 2
-question 3
-4
-a0 this is an answer for qustion 3
-a1 this is an answer for qustion 3
-a2 this is an answer for qustion 3
-a3 this is an answer for qustion 3
+Who is better Trump or Hillary?		
+2
+a0 Trump
+a1 Hillary
+Better?	
+2
+a0 Javi
+a1 Kevin
+Another question?
+3
+a0 Yes 
+a1 NO
+a2 Maybe
