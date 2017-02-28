@@ -22,7 +22,7 @@ public class AdminUser extends javax.swing.JFrame {
     /**
      * Creates new form AdminUser
      */
-    Random r = new Random();
+    
     
     
     ArrayList <JCheckBox> bArray = new ArrayList();
@@ -30,6 +30,8 @@ public class AdminUser extends javax.swing.JFrame {
     String pathQues = "../pollAway/files/polls/";
     File demo = new File(pathDemo);
     File ques = new File(pathQues);
+    
+    public static ArrayList<Question> Ques = new ArrayList();
     public static ArrayList<ArrayList<Answer>> results = new ArrayList();
     
     public AdminUser() {
@@ -130,6 +132,9 @@ public class AdminUser extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void Results_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Results_ButtonActionPerformed
+        Results r = new Results();
+        this.setVisible(false);
+        r.setVisible(true);
         
     }//GEN-LAST:event_Results_ButtonActionPerformed
 

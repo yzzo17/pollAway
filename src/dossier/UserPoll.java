@@ -218,7 +218,7 @@ public class UserPoll extends javax.swing.JFrame {
                 AdminUser.results.add(aA);
             }
             
-            
+            AdminUser.Ques = quez;
         } catch (Exception ex) {
             ex.printStackTrace();
         }

@@ -140,6 +140,7 @@ public class UserDemo extends javax.swing.JFrame {
         /*
         LOOK AT THIS OTHER SHIT OVER HERE. NOW YOU START THE OTHER BITCH UP AND PASS THE USER SO YOU CAN SAVE IT ALL TOGETHER LATER
         */
+        
         user.demographics = selected;
         UserPoll up = new UserPoll(user);
         up.setVisible(true);
