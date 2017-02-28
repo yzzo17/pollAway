@@ -33,13 +33,14 @@ public class AdminUser extends javax.swing.JFrame {
     
     public static ArrayList<Question> Ques = new ArrayList();
     public static ArrayList<ArrayList<Answer>> results = new ArrayList();
+    public static ArrayList<String> demoArray = new ArrayList();
     
     public AdminUser() {
         initComponents();
         this.setLocationRelativeTo(null);
         demo.mkdirs();
         ques.mkdirs();
-        
+        System.out.println(demoArray.toString());
     }
 
     /**

@@ -7,7 +7,9 @@ package dossier;
 
 import java.util.ArrayList;
 import javax.swing.BoxLayout;
+import javax.swing.DefaultListModel;
 import javax.swing.JLabel;
+import javax.swing.JList;
 
 /**
  *
@@ -18,12 +20,15 @@ public class Results extends javax.swing.JFrame {
     /**
      * Creates new form Results
      */
+    ArrayList<String> vCount = new ArrayList();
+    
     public Results() {
         initComponents();
         this.setLocationRelativeTo(null);
         
         printPoll();
         printCount();
+        printDemo();
     }
     
     /**
@@ -35,10 +40,11 @@ public class Results extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPopupMenu1 = new javax.swing.JPopupMenu();
         quesPanel = new javax.swing.JPanel();
         votePanel = new javax.swing.JPanel();
-        demoPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -46,7 +52,7 @@ public class Results extends javax.swing.JFrame {
         quesPanel.setLayout(quesPanelLayout);
         quesPanelLayout.setHorizontalGroup(
             quesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 362, Short.MAX_VALUE)
         );
         quesPanelLayout.setVerticalGroup(
             quesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -57,26 +63,22 @@ public class Results extends javax.swing.JFrame {
         votePanel.setLayout(votePanelLayout);
         votePanelLayout.setHorizontalGroup(
             votePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 105, Short.MAX_VALUE)
+            .addGap(0, 58, Short.MAX_VALUE)
         );
         votePanelLayout.setVerticalGroup(
             votePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout demoPanelLayout = new javax.swing.GroupLayout(demoPanel);
-        demoPanel.setLayout(demoPanelLayout);
-        demoPanelLayout.setHorizontalGroup(
-            demoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 104, Short.MAX_VALUE)
-        );
-        demoPanelLayout.setVerticalGroup(
-            demoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 297, Short.MAX_VALUE)
         );
 
         jLabel1.setFont(new java.awt.Font("Ubuntu", 0, 36)); // NOI18N
         jLabel1.setText("Results:");
+
+        jButton1.setText("Back");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -84,25 +86,29 @@ public class Results extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 229, Short.MAX_VALUE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1))
-                    .addComponent(quesPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(votePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(quesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(demoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(votePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(321, 321, 321))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(18, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(11, 11, 11))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(demoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(votePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(quesPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -110,6 +116,12 @@ public class Results extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        AdminUser x = new AdminUser();
+        this.setVisible(false);
+        x.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
     private void printPoll(){
         for (int i = 0; i < AdminUser.Ques.size(); i++) {
             JLabel q = new JLabel();
@@ -126,24 +138,34 @@ public class Results extends javax.swing.JFrame {
     }
     
     private void printCount(){
+        
+        
         for (int i = 0; i < AdminUser.results.size(); i++) {
             ArrayList<Answer> aArr = AdminUser.results.get(i);
             
-            JLabel q = new JLabel();
-            q.setText("*");
-            this.votePanel.add(q);
-            votePanel.setLayout(new BoxLayout(votePanel, BoxLayout.Y_AXIS));
+            String q = "*";
+            vCount.add(q);
             
             for (int j = 0; j < aArr.size(); j++) {
                 ArrayList<User> uArr = aArr.get(j).users;
                 
-                JLabel a = new JLabel();
-                a.setText(Integer.toString(uArr.size()));
-                this.votePanel.add(a);
-                votePanel.setLayout(new BoxLayout(votePanel, BoxLayout.Y_AXIS));
-                
+                String a = Integer.toString(uArr.size());
+                vCount.add(a);
             }
         }
+
+        for (int i = 0; i < vCount.size(); i++) {
+            JLabel a = new JLabel();
+            
+            a.setText(vCount.get(i));
+            votePanel.add(a);
+            votePanel.setLayout(new BoxLayout(votePanel, BoxLayout.Y_AXIS));
+        }
+        
+    }
+    
+    private void printDemo(){
+        
     }
     /**
      * @param args the command line arguments
@@ -181,8 +203,9 @@ public class Results extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel demoPanel;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JPanel quesPanel;
     private javax.swing.JPanel votePanel;
     // End of variables declaration//GEN-END:variables

@@ -29,7 +29,7 @@ public class UserPoll extends javax.swing.JFrame {
     
     ButtonGroup group = new ButtonGroup();
     int currentQuestion = 0;
-    
+    int cQ = 0;
     
     String username = System.getProperty("user.name");
     String path = "../pollAway/files/polls/poll.txt";
@@ -46,7 +46,6 @@ public class UserPoll extends javax.swing.JFrame {
         user = u;
         getQues();
         nextQues();
-        currentQuestion = currentQuestion - 1;
         quesPanel.revalidate();
         answerPanel.revalidate();
     }
@@ -140,14 +139,19 @@ public class UserPoll extends javax.swing.JFrame {
     private void nextQ_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextQ_buttonActionPerformed
         String selectedAns = getSelected(group);
         
-        if (!(currentQuestion > quez.size()-1)) {
-            for (int i = 0; i < AdminUser.results.get(currentQuestion).size(); i++) {
-                if (AdminUser.results.get(currentQuestion).get(i).getAnswerText().equals(selectedAns)) {
-                    AdminUser.results.get(currentQuestion).get(i).users.add(user);
+        
+        
+        
+        if (!(cQ > quez.size()-1)) {
+            for (int i = 0; i < AdminUser.results.get(cQ).size(); i++) {
+                if (AdminUser.results.get(cQ).get(i).getAnswerText().equals(selectedAns)) {
+                    
+                    AdminUser.results.get(cQ).get(i).users.add(user);
                 }
                 
             }
-            
+            System.out.println(AdminUser.results.size());
+            cQ = cQ + 1;
         }
         nextQues();
         
@@ -206,19 +210,22 @@ public class UserPoll extends javax.swing.JFrame {
                 quez.add(q);
             }
             
-            for (int i = 0; i < quez.size(); i++) {
+            if (AdminUser.results.size() < quez.size()) {
+                for (int i = 0; i < quez.size(); i++) {
                 ArrayList<String> S = quez.get(i).getAnswers();
                 ArrayList<Answer> aA = new ArrayList();
-                for (int j = 0; j < S.size(); j++) {
-                    Answer a = new Answer();
-                    a.setAnswerText(S.get(j));
-                    aA.add(a);
-                    
+                    for (int j = 0; j < S.size(); j++) {
+                        Answer a = new Answer();
+                        a.setAnswerText(S.get(j));
+                        aA.add(a);
+
+                    }
+                    AdminUser.results.add(aA);
                 }
-                AdminUser.results.add(aA);
             }
             
             AdminUser.Ques = quez;
+            
         } catch (Exception ex) {
             ex.printStackTrace();
         }

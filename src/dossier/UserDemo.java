@@ -24,6 +24,7 @@ public class UserDemo extends javax.swing.JFrame {
      * Creates new form UserDemo
      */
     ArrayList<JCheckBox> bArray = new ArrayList();
+    ArrayList<String> dArray = new ArrayList();
     ArrayList<String> selected = new ArrayList();
     boolean nextbutton = false;
     User user = new User();
@@ -121,10 +122,12 @@ public class UserDemo extends javax.swing.JFrame {
 
             while (s.hasNextLine()) {
                 String line = s.nextLine();
+                dArray.add(line);
                 JCheckBox e = new JCheckBox();
                 e.setText(line);
                 bArray.add(e);
             }
+            AdminUser.demoArray = dArray;
             s.close();
 
         } catch (Exception ex) {
@@ -143,7 +146,9 @@ public class UserDemo extends javax.swing.JFrame {
         
         user.demographics = selected;
         UserPoll up = new UserPoll(user);
+        this.setVisible(false);
         up.setVisible(true);
+        
     }
     
     
