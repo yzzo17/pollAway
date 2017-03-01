@@ -178,6 +178,19 @@ public class Results extends javax.swing.JFrame {
                 }
             }
         }
+        System.out.println("**********************************");
+        for (int i = 0; i < AdminUser.results.size(); i++) {
+            ArrayList<Answer> ansArray = AdminUser.results.get(i);
+            
+            
+            for (int j = 0; j < ansArray.size(); j++) {
+                ArrayList<Double> demoAns = ansArray.get(j).demo;
+                System.out.println("* "+ansArray.get(j).getAnswerText());
+                for (int k = 0; k < demoAns.size(); k++) {
+                    System.out.println(demoAns.get(k));
+                }
+            }
+        }
     }
     
     private String getDemo(String demoToCheck, Answer currentAns){
@@ -185,7 +198,7 @@ public class Results extends javax.swing.JFrame {
         int total = currentAns.users.size();
         
         
-        for (int i = 0; i < currentAns.users.size(); i++) {
+        for (int i = 0; i < currentAns.users.size(); i++) {                 //WORK HERE
             User currentUser = currentAns.users.get(i);
 
             for (int j = 0; j < currentUser.demographics.size(); j++) {
@@ -193,6 +206,7 @@ public class Results extends javax.swing.JFrame {
 
                 if (demo.equals(demoToCheck)) {
                     demoCount = demoCount + 1;
+                    
                 }
             }
         }
@@ -207,6 +221,10 @@ public class Results extends javax.swing.JFrame {
             
         }
         
+        if (currentAns.demo.size() > AdminUser.demoArray.size()) {
+            //currentAns.demo
+        }
+        currentAns.demo.add(dc*100);
         return demoToCheck +" "+dc*100+"%";
     }
     /**

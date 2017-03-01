@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class Answer {
     private String answerText;
     ArrayList<User> users = new ArrayList();
+    ArrayList<Double> demo = new ArrayList();
     
     public void setAnswerText(String s){
         answerText = s;
