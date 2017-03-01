@@ -14,7 +14,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 
 /**
- *
+ *i
  * @author Osmani Alegre
  */
 public class AdminUser extends javax.swing.JFrame {
@@ -40,7 +40,6 @@ public class AdminUser extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         demo.mkdirs();
         ques.mkdirs();
-        System.out.println(demoArray.toString());
     }
 
     /**
