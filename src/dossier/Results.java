@@ -167,65 +167,52 @@ public class Results extends javax.swing.JFrame {
     private void printDemo(){
         for (int j = 0; j < AdminUser.results.size(); j++) {
                 ArrayList<Answer> ansArray = AdminUser.results.get(j);
-                System.out.println("Q*");
+            
+            for (int k = 0; k < ansArray.size(); k++) {
+                Answer currentAns = ansArray.get(k);
+                System.out.println("*"+currentAns.getAnswerText()+": ");
+                
+                for (int i = 0; i < AdminUser.demoArray.size(); i++) {
+                    String currentDemo = AdminUser.demoArray.get(i);
+                    String dcount = getDemo(currentDemo, currentAns);     
+                    
+                    System.out.println(currentDemo + " " + dcount);
+                }
+            }    
+            
+            
+                
+        }
         
-            for (int i = 0; i < AdminUser.demoArray.size(); i++) {
-                String currentDemo = AdminUser.demoArray.get(i);
-            
-                for (int k = 0; k < ansArray.size(); k++) {
-                    System.out.print(ansArray.get(k).getAnswerText()+": ");
-                    System.out.println(getDemo(currentDemo, ansArray.get(k)));
-                }
-            }
-        }
-        System.out.println("**********************************");
-        for (int i = 0; i < AdminUser.results.size(); i++) {
-            ArrayList<Answer> ansArray = AdminUser.results.get(i);
-            
-            
-            for (int j = 0; j < ansArray.size(); j++) {
-                ArrayList<Double> demoAns = ansArray.get(j).demo;
-                System.out.println("* "+ansArray.get(j).getAnswerText());
-                for (int k = 0; k < demoAns.size(); k++) {
-                    System.out.println(demoAns.get(k));
-                }
-            }
-        }
+        
+        
     }
     
     private String getDemo(String demoToCheck, Answer currentAns){
+        
+        int total = AdminUser.total;
+        System.out.println(total);
+        
         int demoCount = 0;
-        int total = currentAns.users.size();
-        
-        
         for (int i = 0; i < currentAns.users.size(); i++) {                 //WORK HERE
             User currentUser = currentAns.users.get(i);
-
-            for (int j = 0; j < currentUser.demographics.size(); j++) {
-                String demo = currentUser.demographics.get(j);
-
-                if (demo.equals(demoToCheck)) {
-                    demoCount = demoCount + 1;
-                    
-                }
+            
+            String demo = currentUser.demographic;    
+            if (demo.equals(demoToCheck)) {
+                demoCount = demoCount + 1;
             }
+            
         }
+        double dc;
         
-        double dc = 0;
         if (total == 0) {
-            demoCount = 0;
-            dc = 0;
+            return "0";
         }
         else{
             dc = demoCount/total;
-            
+            return ""+dc;
         }
         
-        if (currentAns.demo.size() > AdminUser.demoArray.size()) {
-            //currentAns.demo
-        }
-        currentAns.demo.add(dc*100);
-        return demoToCheck +" "+dc*100+"%";
     }
     /**
      * @param args the command line arguments

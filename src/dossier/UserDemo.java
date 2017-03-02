@@ -25,7 +25,7 @@ public class UserDemo extends javax.swing.JFrame {
      */
     ArrayList<JCheckBox> bArray = new ArrayList();
     ArrayList<String> dArray = new ArrayList();
-    ArrayList<String> selected = new ArrayList();
+    String selected;
     boolean nextbutton = false;
     User user = new User();
     
@@ -137,14 +137,14 @@ public class UserDemo extends javax.swing.JFrame {
     private void addSelected(){
         for (int i = 0; i < bArray.size(); i++) {
             if (bArray.get(i).isSelected()) {
-                selected.add(bArray.get(i).getText());
+                selected = bArray.get(i).getText();
             }
         }
         /*
         LOOK AT THIS OTHER SHIT OVER HERE. NOW YOU START THE OTHER BITCH UP AND PASS THE USER SO YOU CAN SAVE IT ALL TOGETHER LATER
         */
         
-        user.demographics = selected;
+        user.demographic = selected;
         UserPoll up = new UserPoll(user);
         this.setVisible(false);
         up.setVisible(true);

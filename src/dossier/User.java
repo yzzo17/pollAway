@@ -12,12 +12,10 @@ import java.util.ArrayList;
  * @author javif89
  */
 public class User {
-    ArrayList<String> demographics = new ArrayList();
+    String demographic;
     String id; //????
     
-    public void addDemo(String d){
-        demographics.add(d);
-    }
+    
     
     
     

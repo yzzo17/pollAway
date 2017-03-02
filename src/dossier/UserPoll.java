@@ -163,6 +163,9 @@ public class UserPoll extends javax.swing.JFrame {
 
         if (currentQuestion > quez.size() - 1) {
             JOptionPane.showMessageDialog(this, "ALERT","POll OVER",JOptionPane.INFORMATION_MESSAGE);
+            
+            AdminUser.total = AdminUser.total + 1;
+            
             AdminUser u = new AdminUser();
             this.setVisible(false);
             u.setVisible(true);

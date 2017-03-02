@@ -34,6 +34,7 @@ public class AdminUser extends javax.swing.JFrame {
     public static ArrayList<Question> Ques = new ArrayList();
     public static ArrayList<ArrayList<Answer>> results = new ArrayList();
     public static ArrayList<String> demoArray = new ArrayList();
+    public static int total;
     
     public AdminUser() {
         initComponents();
