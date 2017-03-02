@@ -138,10 +138,6 @@ public class UserPoll extends javax.swing.JFrame {
 
     private void nextQ_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextQ_buttonActionPerformed
         String selectedAns = getSelected(group);
-        
-        
-        
-        
         if (!(cQ > quez.size()-1)) {
             for (int i = 0; i < AdminUser.results.get(cQ).size(); i++) {
                 if (AdminUser.results.get(cQ).get(i).getAnswerText().equals(selectedAns)) {
@@ -189,6 +185,7 @@ public class UserPoll extends javax.swing.JFrame {
             
             quesPanel.revalidate();
             answerPanel.revalidate();
+            answerPanel.repaint();
 
             currentQuestion = currentQuestion + 1;
         }
