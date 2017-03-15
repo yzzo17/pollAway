@@ -20,7 +20,7 @@ public class Results extends javax.swing.JFrame {
     /**
      * Creates new form Results
      */
-    ArrayList<String> vCount = new ArrayList();
+    ArrayList<String> vCount = new ArrayList();           //vote count for each answer
     
     public Results() {
         initComponents();
@@ -164,9 +164,9 @@ public class Results extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         AdminUser x = new AdminUser();
         this.setVisible(false);
-        x.setVisible(true);
+        x.setVisible(true);   //creates new AdminUser Jframe and displays it
     }//GEN-LAST:event_jButton1ActionPerformed
-    private void printPoll(){
+    private void printPoll(){   //prints ALL the questions and answers from poll
         for (int i = 0; i < AdminUser.Ques.size(); i++) {
             JLabel q = new JLabel();
             q.setText(AdminUser.Ques.get(i).getQuestion());
@@ -181,7 +181,7 @@ public class Results extends javax.swing.JFrame {
         }
     }
     
-    private void printCount(){
+    private void printCount(){      //looks at the amount of users in every answer object and displays it
         
         
         for (int i = 0; i < AdminUser.results.size(); i++) {
@@ -223,10 +223,10 @@ public class Results extends javax.swing.JFrame {
                     String currentDemo = AdminUser.demoArray.get(i);
                     String dcount = getDemo(currentDemo, currentAns);     
                     
-                    demoline = demoline + currentDemo + " " + dcount+ " | ";
+                    demoline = demoline + currentDemo + " " + dcount+ " | ";    //checks each demographic for every answer 
                 }
                 
-                JLabel dl = new JLabel();
+                JLabel dl = new JLabel();   //displays demoline
                 dl.setText(demoline);
                 demoPanel.add(dl);
                 demoPanel.setLayout(new BoxLayout(demoPanel, BoxLayout.Y_AXIS));
@@ -241,12 +241,12 @@ public class Results extends javax.swing.JFrame {
         System.out.println(total);
         
         double demoCount = 0;
-        for (int i = 0; i < currentAns.users.size(); i++) {                 //WORK HERE
+        for (int i = 0; i < currentAns.users.size(); i++) {      
             User currentUser = currentAns.users.get(i);
             
             String demo = currentUser.demographic;    
             if (demo.equals(demoToCheck)) {
-                demoCount = demoCount + 1;
+                demoCount = demoCount + 1;            //checks each user in answer and checks for amount of demographic in that answer
             }
         }
         double dc;
@@ -256,7 +256,7 @@ public class Results extends javax.swing.JFrame {
         }
         else{
             dc = (demoCount/total)*100;
-            return Double.toString(dc)+"%";
+            return Double.toString(dc)+"%";                 //takes amount of demographic and makes it into percentage 
         }
     }
     /**

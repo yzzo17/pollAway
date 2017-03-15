@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @author javif89
  */
 public class User {
-    String demographic;
+    String demographic;               //holds demographic for User
     
     
     

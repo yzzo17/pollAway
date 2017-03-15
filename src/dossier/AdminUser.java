@@ -22,11 +22,13 @@ public class AdminUser extends javax.swing.JFrame {
     /**
      * Creates new form AdminUser
      */
+    //files to use
     String pathDemo = "files/demo/";
     String pathQues = "files/polls/";
     File demo = new File(pathDemo);
     File ques = new File(pathQues);
     
+    //global variables accessed from other classes
     public static ArrayList<Question> Ques = new ArrayList();
     public static ArrayList<ArrayList<Answer>> results = new ArrayList();
     public static ArrayList<String> demoArray = new ArrayList();
@@ -35,6 +37,8 @@ public class AdminUser extends javax.swing.JFrame {
     public AdminUser() {
         initComponents();
         this.setLocationRelativeTo(null);
+        
+        //makes directories in case they don't exist
         if (!demo.isDirectory()) {
             demo.mkdirs();
         }
@@ -123,20 +127,20 @@ public class AdminUser extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        AdminDemo x = new AdminDemo();
+        AdminDemo x = new AdminDemo(); //creates new AdminDemo Jframe and displays it
         this.setVisible(false);
         x.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         
-        UserDemo ud = new UserDemo();
+        UserDemo ud = new UserDemo();  //creates new UserDemo Jframe and displays it
         ud.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void Results_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Results_ButtonActionPerformed
-        Results r = new Results();
+        Results r = new Results(); //creates new Results Jframe and displays it
         this.setVisible(false);
         r.setVisible(true);
         

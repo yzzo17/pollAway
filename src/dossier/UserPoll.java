@@ -23,24 +23,22 @@ public class UserPoll extends javax.swing.JFrame {
     /**
      * Creates new form UserPoll
      */
-    ArrayList<Question> quez = new ArrayList();
-    ArrayList<String> ansz = new ArrayList();
-    boolean fin = false;
-    
-    ButtonGroup group = new ButtonGroup();
-    int currentQuestion = 0;
+    ArrayList<Question> quez = new ArrayList();  //Array of Question objects created from text file
+    ArrayList<String> ansz = new ArrayList();   //Array answers for each question
+    ButtonGroup group = new ButtonGroup();    //group of buttons to be made into answers
+    int currentQuestion = 0;      
     int cQ = 0;
     String path = "files/polls/poll.txt";
     File file = new File(path);
     
     
-    User user = new User();
+    User user = new User(); //receives user from UserDemo object
     
 
     public UserPoll(User u) {
         initComponents();
         this.setLocationRelativeTo(null);
-        user = u;
+        user = u;    
         getQues();
         nextQues();
         quesPanel.revalidate();
@@ -134,7 +132,7 @@ public class UserPoll extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void nextQ_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextQ_buttonActionPerformed
-        String selectedAns = getSelected(group);
+        String selectedAns = getSelected(group);      //after the next button is selected, it gets the selected radio button and passes it as selected
         if (!(cQ > quez.size()-1)) {
             for (int i = 0; i < AdminUser.results.get(cQ).size(); i++) {
                 if (AdminUser.results.get(cQ).get(i).getAnswerText().equals(selectedAns)) {
@@ -152,7 +150,7 @@ public class UserPoll extends javax.swing.JFrame {
     }//GEN-LAST:event_nextQ_buttonActionPerformed
     
     
-    private void nextQues() {
+    private void nextQues() {   //removes all components and updates them so they are up to par with each answer
 
         if (currentQuestion > quez.size() - 1) {
             JOptionPane.showMessageDialog(this, "ALERT","POll OVER",JOptionPane.INFORMATION_MESSAGE);
@@ -189,7 +187,7 @@ public class UserPoll extends javax.swing.JFrame {
 
     }
     
-    private void getQues() {
+    private void getQues() {    //gets questions from the text file
         try {
             Scanner in = new Scanner(file);
             int currentQuestion = 1;
@@ -228,7 +226,7 @@ public class UserPoll extends javax.swing.JFrame {
         }
     }
 
-   private  String getSelected(ButtonGroup buttonGroup) {
+   private  String getSelected(ButtonGroup buttonGroup) {    //gets the selected button from the RadioButton group
         for (Enumeration<AbstractButton> buttons = buttonGroup.getElements(); buttons.hasMoreElements();) {
             AbstractButton button = buttons.nextElement();
 

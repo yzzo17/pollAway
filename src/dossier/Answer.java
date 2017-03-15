@@ -12,11 +12,11 @@ import java.util.ArrayList;
  * @author javif89
  */
 public class Answer {
-    private String answerText;
-    ArrayList<User> users = new ArrayList();
-    ArrayList<Double> demo = new ArrayList();
+    private String answerText;           //holds answer text
+    ArrayList<User> users = new ArrayList();    //holds list of users that answered question
+    ArrayList<Double> demo = new ArrayList();  //list percentage for each demographic
     
-    public void setAnswerText(String s){
+    public void setAnswerText(String s){     
         answerText = s;
     }
     public String getAnswerText(){
@@ -24,7 +24,7 @@ public class Answer {
     }
     
     public void addUser(User u){
-        users.add(u);
+        users.add(u);      
     }
     
 }

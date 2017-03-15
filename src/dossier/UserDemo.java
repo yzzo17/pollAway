@@ -23,14 +23,13 @@ public class UserDemo extends javax.swing.JFrame {
     /**
      * Creates new form UserDemo
      */
-    ArrayList<JCheckBox> bArray = new ArrayList();
-    ArrayList<String> dArray = new ArrayList();
-    String selected;
-    boolean nextbutton = false;
-    User user = new User();
+    ArrayList<JCheckBox> bArray = new ArrayList(); //ArrayList of checkboxes of demographics
+    ArrayList<String> dArray = new ArrayList(); //list of string demographics
+    String selected;  //demographic selected
+    User user = new User();  //user created to give demographic to
     
 
-    String path = "files/demo/demo.txt";
+    String path = "files/demo/demo.txt"; 
     File file = new File(path);
     
     public UserDemo() {
@@ -114,7 +113,7 @@ public class UserDemo extends javax.swing.JFrame {
      * @param args the command line arguments
      */
         
-    private void readDemoFile(){
+    private void readDemoFile(){      //reads demo.txt and adds each line to dArray
         
         try {
             File file = new File(path);
@@ -134,17 +133,15 @@ public class UserDemo extends javax.swing.JFrame {
             ex.printStackTrace();
         } 
     }
-    private void addSelected(){
+    private void addSelected(){       //finds the demographic selected
         for (int i = 0; i < bArray.size(); i++) {
             if (bArray.get(i).isSelected()) {
                 selected = bArray.get(i).getText();
             }
         }
-        /*
-        LOOK AT THIS OTHER SHIT OVER HERE. NOW YOU START THE OTHER BITCH UP AND PASS THE USER SO YOU CAN SAVE IT ALL TOGETHER LATER
-        */
-        
-        user.demographic = selected;
+        user.demographic = selected;  //after the demographic is selected a new UserPoll object is made for the voter to vote
+                                                            //the user being 'worked' on is also passed
+                                                            
         UserPoll up = new UserPoll(user);
         this.setVisible(false);
         up.setVisible(true);
@@ -152,7 +149,7 @@ public class UserDemo extends javax.swing.JFrame {
     }
     
     
-    private void displayBox(){
+    private void displayBox(){  //displays all the demographics 
         DemoPanel.removeAll();
         for (int i = 0; i < bArray.size(); i++) {
             if (bArray.get(i).getText().charAt(0) == '*') {

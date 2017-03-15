@@ -25,7 +25,7 @@ public class AdminDemo extends javax.swing.JFrame {
     
     public AdminDemo() {
         initComponents();
-        this.setLocationRelativeTo(null);
+        this.setLocationRelativeTo(null);   //centers jframe
         this.revalidate();
         readDemoFile();
         displayBox();
@@ -190,16 +190,16 @@ public class AdminDemo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void contButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contButtonActionPerformed
-        AdminPoll a = new AdminPoll();
+        AdminPoll a = new AdminPoll();      
         this.setVisible(false);
-        a.setVisible(true);
+        a.setVisible(true);            //basically goes to the AdminPoll Jframe
     }//GEN-LAST:event_contButtonActionPerformed
 
     private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
         ArrayList<JCheckBox> temp = new ArrayList();
-        
+                                    
         for (int i = 0; i < bArray.size(); i++) {
-            if (bArray.get(i).isSelected()) {
+            if (bArray.get(i).isSelected()) {             //Deletes checkboxes from the checkboxes array
                     bArray.remove(i);
             }
         }
@@ -207,19 +207,12 @@ public class AdminDemo extends javax.swing.JFrame {
         
         
         try {
-            writeDemoFile();
+            writeDemoFile();   
         } catch (FileNotFoundException ex) {
             Logger.getLogger(AdminDemo.class.getName()).log(Level.SEVERE, null, ex);
         }
         displayBox();
         this.revalidate();
-        
-        
-        for (int i = 0; i < bArray.size(); i++) {
-            System.out.print(bArray.get(i).getText() + ",");
-        }
-        
-        System.out.println("**");
         
         
     }//GEN-LAST:event_DeleteButtonActionPerformed
@@ -228,7 +221,7 @@ public class AdminDemo extends javax.swing.JFrame {
         Dimension n = new Dimension(400, 300);
         DemoName.setSize(n);
         DemoName.setLocationRelativeTo(null);
-        DemoName.setVisible(true);
+        DemoName.setVisible(true);        //creates JDialog for new demographic input
         
     }//GEN-LAST:event_addButtonActionPerformed
 
@@ -242,7 +235,7 @@ public class AdminDemo extends javax.swing.JFrame {
         bArray.add(e);
         DemoName.setVisible(false);
         dName.setText("");
-        try {
+        try {                                     //adds to the CheckBox Array while also re-writing to the txt file the new demo entry
             writeDemoFile();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(AdminDemo.class.getName()).log(Level.SEVERE, null, ex);
@@ -254,12 +247,12 @@ public class AdminDemo extends javax.swing.JFrame {
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         AdminUser x = new AdminUser();
         this.setVisible(false);
-        x.setVisible(true);
+        x.setVisible(true);             //goes back to the main menu
     }//GEN-LAST:event_backButtonActionPerformed
     private void writeDemoFile() throws FileNotFoundException{
         PrintWriter writer = new PrintWriter(file);
         writer.print("");
-        writer.close();
+        writer.close();                   //writes the text from the text boxes to txt file
         
         PrintWriter w = new PrintWriter(file);
         for (int i = 0; i < bArray.size(); i++) {
@@ -278,7 +271,7 @@ public class AdminDemo extends javax.swing.JFrame {
             while (sc.hasNextLine()) {
                 String line = sc.nextLine();
                 JCheckBox e = new JCheckBox();
-                e.setText(line);
+                e.setText(line);                        //reads from txt file
                 bArray.add(e);
             }
             sc.close();
@@ -290,7 +283,7 @@ public class AdminDemo extends javax.swing.JFrame {
     
     
     
-    private void displayBox(){
+    private void displayBox(){       //Displays the CheckBoxes on the JPanel
         DemoPanel.removeAll();
         for (int i = 0; i < bArray.size(); i++) {
             if (bArray.get(i).getText().charAt(0) == '*') {

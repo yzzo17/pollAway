@@ -211,11 +211,11 @@ public class AdminPoll extends javax.swing.JFrame {
         Ques.add(question.getText());
         arrA.add(ans1);
         arrA.add(ans2);
-        arrA.add(ans3);
+        arrA.add(ans3);                   //adds default 5 answer to question array
         arrA.add(ans4);
         arrA.add(ans5);
         
-        for (int i = 0; i < arrA.size(); i++) {
+        for (int i = 0; i < arrA.size(); i++) {  //check if the field is empty then adds it to the answer array
             if(!"".equals(arrA.get(i).getText()))
             {
                 answers.add(arrA.get(i).getText());
@@ -235,7 +235,7 @@ public class AdminPoll extends javax.swing.JFrame {
 
         
         
-        
+                                        //resets the Jframe for the next question
         q = q + 1;
         qNum = Integer.toString(q);
         queNum.setText(qNum);
@@ -262,9 +262,9 @@ public class AdminPoll extends javax.swing.JFrame {
         }
         
         
-        JOptionPane.showMessageDialog(this, "Demographics Have Been Recorded", "Recorder",JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Poll has been Recorded", "Notice",JOptionPane.INFORMATION_MESSAGE);
         this.setVisible(false);
-        AdminUser admin = new AdminUser();
+        AdminUser admin = new AdminUser();    //Goes back to the main menu
         admin.setVisible(true);
         
         admin.setLocationRelativeTo(admin);

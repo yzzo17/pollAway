@@ -12,9 +12,9 @@ import java.io.*;
  *
  * @author yzzo
  */
-public class Question implements Serializable{
-    private String question;
-    private ArrayList<String> answers = new ArrayList();
+public class Question{
+    private String question;               //holds question being answered
+    private ArrayList<String> answers = new ArrayList();   //List of answer text
     
     public Question(){
         
