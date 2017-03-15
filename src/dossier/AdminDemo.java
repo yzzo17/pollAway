@@ -20,7 +20,7 @@ public class AdminDemo extends javax.swing.JFrame {
     /** Creates new form Demo */
     ArrayList<JCheckBox> bArray = new ArrayList();
     
-    String path = "../pollAway/files/demo/demo.txt";
+    String path = "files/demo/demo.txt";
     File file = new File(path);
     
     public AdminDemo() {
@@ -108,7 +108,7 @@ public class AdminDemo extends javax.swing.JFrame {
         DemoPanel.setLayout(DemoPanelLayout);
         DemoPanelLayout.setHorizontalGroup(
             DemoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 364, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         DemoPanelLayout.setVerticalGroup(
             DemoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -155,15 +155,15 @@ public class AdminDemo extends javax.swing.JFrame {
                         .addGap(160, 160, 160)
                         .addComponent(contButton, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(DemoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(DemoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(146, 146, 146)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(addButton, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)
                             .addComponent(DeleteButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(125, 125, 125)
                         .addComponent(currentDem)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -190,7 +190,7 @@ public class AdminDemo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void contButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contButtonActionPerformed
-        AdminAddPoll a = new AdminAddPoll();
+        AdminPoll a = new AdminPoll();
         this.setVisible(false);
         a.setVisible(true);
     }//GEN-LAST:event_contButtonActionPerformed
@@ -273,15 +273,15 @@ public class AdminDemo extends javax.swing.JFrame {
         
         try {
             File file = new File(path);
-            Scanner s = new Scanner(new BufferedReader(new FileReader(path)));
+            Scanner sc = new Scanner(new BufferedReader(new FileReader(path)));
 
-            while (s.hasNextLine()) {
-                String line = s.nextLine();
+            while (sc.hasNextLine()) {
+                String line = sc.nextLine();
                 JCheckBox e = new JCheckBox();
                 e.setText(line);
                 bArray.add(e);
             }
-            s.close();
+            sc.close();
 
         } catch (Exception ex) {
             ex.printStackTrace();

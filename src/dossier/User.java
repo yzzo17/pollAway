@@ -13,7 +13,6 @@ import java.util.ArrayList;
  */
 public class User {
     String demographic;
-    String id; //????
     
     
     

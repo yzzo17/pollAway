@@ -1,13 +1,2 @@
-Who is better Trump or Hillary?		
-2
-a0 Trump
-a1 Hillary
-Better?	
-2
-a0 Javi
-a1 Kevin
-Another question?
-3
-a0 Yes 
-a1 NO
-a2 Maybe
+sdsdfgsdfg
+0

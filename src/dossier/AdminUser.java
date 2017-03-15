@@ -22,12 +22,8 @@ public class AdminUser extends javax.swing.JFrame {
     /**
      * Creates new form AdminUser
      */
-    
-    
-    
-    ArrayList <JCheckBox> bArray = new ArrayList();
-    String pathDemo = "../pollAway/files/demo/";
-    String pathQues = "../pollAway/files/polls/";
+    String pathDemo = "files/demo/";
+    String pathQues = "files/polls/";
     File demo = new File(pathDemo);
     File ques = new File(pathQues);
     
@@ -39,8 +35,14 @@ public class AdminUser extends javax.swing.JFrame {
     public AdminUser() {
         initComponents();
         this.setLocationRelativeTo(null);
-        demo.mkdirs();
-        ques.mkdirs();
+        if (!demo.isDirectory()) {
+            demo.mkdirs();
+        }
+        if (!ques.isDirectory()) {
+            ques.mkdirs();
+        }
+        System.out.println(demo.getAbsoluteFile());
+        System.out.println(demo.getPath());
     }
 
     /**

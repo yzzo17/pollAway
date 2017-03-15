@@ -30,12 +30,9 @@ public class UserPoll extends javax.swing.JFrame {
     ButtonGroup group = new ButtonGroup();
     int currentQuestion = 0;
     int cQ = 0;
-    
-    String username = System.getProperty("user.name");
-    String path = "../pollAway/files/polls/poll.txt";
+    String path = "files/polls/poll.txt";
     File file = new File(path);
     
-    PollAwayMain pam = new PollAwayMain();
     
     User user = new User();
     

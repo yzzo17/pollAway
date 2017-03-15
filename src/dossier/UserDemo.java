@@ -29,8 +29,8 @@ public class UserDemo extends javax.swing.JFrame {
     boolean nextbutton = false;
     User user = new User();
     
-    String username = System.getProperty("user.name");
-    String path = "../pollAway/files/demo/demo.txt";
+
+    String path = "files/demo/demo.txt";
     File file = new File(path);
     
     public UserDemo() {

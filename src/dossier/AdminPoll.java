@@ -19,14 +19,14 @@ import javax.swing.*;
  *
  * @author Osmani Alegre
  */
-public class AdminAddPoll extends javax.swing.JFrame {
+public class AdminPoll extends javax.swing.JFrame {
 
     /**
      * Creates new form AddPolls
      */
     
     ArrayList<String> Ques = new ArrayList();
-    public AdminAddPoll() {
+    public AdminPoll() {
         initComponents();
         this.setLocationRelativeTo(null);       //sets window in the middle
     }
@@ -182,12 +182,9 @@ public class AdminAddPoll extends javax.swing.JFrame {
                     .addComponent(ans2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(labelC)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(ans3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                    .addComponent(labelC, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(ans3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelD, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ans4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -261,11 +258,11 @@ public class AdminAddPoll extends javax.swing.JFrame {
             // TODO add your handling code here:
             writePollToFile(Ques);
         } catch (IOException ex) {
-            Logger.getLogger(AdminAddPoll.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AdminPoll.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         
-        JOptionPane.showMessageDialog(this, "Recorder","Demographics Have Been Recorded",JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Demographics Have Been Recorded", "Recorder",JOptionPane.INFORMATION_MESSAGE);
         this.setVisible(false);
         AdminUser admin = new AdminUser();
         admin.setVisible(true);
@@ -291,8 +288,7 @@ public class AdminAddPoll extends javax.swing.JFrame {
     }//GEN-LAST:event_ans5ActionPerformed
  
     private void writePollToFile(ArrayList<String> ansArray) throws FileNotFoundException, IOException{
-        String username = System.getProperty("user.name");
-        String path = "../pollAway/files/polls";
+        String path = "files/polls";
         
         BufferedWriter out = new BufferedWriter(new FileWriter(path+"/poll.txt"));
         for (int i = 0; i < ansArray.size(); i++) {
@@ -319,14 +315,18 @@ public class AdminAddPoll extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AdminAddPoll.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminPoll.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AdminAddPoll.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminPoll.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AdminAddPoll.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminPoll.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AdminAddPoll.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminPoll.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
